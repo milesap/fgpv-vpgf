@@ -75,6 +75,8 @@ function events($rootScope) {
         rvGeosearchClose: 'rvGeosearchClose', // Fire when geosearch close
         rvTableReady: 'rvTableReady',
         rvFeatureMouseOver: 'rvFeatureMouseOver',
+        rvProjectiontChanged: 'rvProjectiontChanged',
+        rvLanguageChanged: 'rvLanguageChanged',
 
         rvLayerDefinitionClauseChanged: 'rvLayerDefinitionClauseChanged',
 
