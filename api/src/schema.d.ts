@@ -417,9 +417,13 @@ export interface FgpvConfigSchema {
    */
   intentions?: {
     /**
-     * intention for EPSG Lookup
+     * Intention for EPSG Lookup
      */
     epsg?: string;
+    /**
+     * Intention for displaying data
+     */
+    table?: string;
   };
 }
 /**
@@ -649,6 +653,10 @@ export interface TileSchemaNode {
       | "styles")[];
     state?: InitialLayerSettings;
   };
+  /**
+   * Indicates if the map projection includes a north pole.  Defaults to false to avoid errors.
+   */
+  hasNorthPole?: boolean;
 }
 export interface ExtentWithReferenceNode {
   xmin: number;
