@@ -2,9 +2,9 @@
 
 npm run docs
 
-if git ls-remote --heads --exit-code https://github.com/fgpv-vpgf/fgpv-vpgf.git gh-pages &> /dev/null; then
+if git ls-remote --heads --exit-code https://github.com/milesap/fgpv-vpgf.git gh-pages &> /dev/null; then
     echo "gh-pages exists - cloning ..."
-    git clone --depth=50 --branch=gh-pages https://github.com/fgpv-vpgf/fgpv-vpgf.git ./gh-page-files
+    git clone --depth=50 --branch=gh-pages https://github.com/milesap/fgpv-vpgf.git ./gh-page-files
 
 else
     echo "gh-pages does not exist!"
