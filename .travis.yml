@@ -17,15 +17,10 @@ before_install:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: bash ./scripts/travis/deploy-build-azure.sh
-  on:
-    all_branches: true
-- provider: script
-  skip_cleanup: true
   script: bash ./scripts/travis/docs.sh
   on:
     all_branches: true
-    repo: fgpv-vpgf/fgpv-vpgf
+    repo: milesap/fgpv-vpgf
     condition:
     - "$TRAVIS_BRANCH =~ ^develop$|^ghpages-docs$|^master$|^v\\d"
     - "$mProc == dev"
@@ -37,7 +32,7 @@ deploy:
   keep-history: true
   on:
     all_branches: true
-    repo: fgpv-vpgf/fgpv-vpgf
+    repo: milesap/fgpv-vpgf
     condition:
     - "$TRAVIS_BRANCH =~ ^develop$|^ghpages-docs$|^master$|^v\\d"
     - "$mProc == dev"
