@@ -4,21 +4,21 @@ npm run docs
 
 if git ls-remote --heads --exit-code https://github.com/fgpv-vpgf/fgpv-vpgf.git gh-pages &> /dev/null; then
     echo "gh-pages exists - cloning ..."
-    git clone --depth=50 --branch=gh-pages https://github.com/fgpv-vpgf/fgpv-vpgf.git ./gh-page-files
+    git clone --depth=50 --branch=gh-pages https://github.com/fgpv-vpgf/fgpv-vpgf.git ./docs
 
 else
     echo "gh-pages does not exist!"
-    mkdir gh-page-files
+    mkdir docs
 fi
 
 # remove existing folder if present
-if [ -d "gh-page-files/$TRAVIS_BRANCH" ]; then
-    rm -rf "gh-page-files/$TRAVIS_BRANCH"
+if [ -d "docs/$REF_NAME" ]; then
+    rm -rf "docs/$REF_NAME"
 fi
 
 # move generated docs into deployment folder
-mv docs "gh-page-files/$TRAVIS_BRANCH"
+mv docs "docs/$REF_NAME"
 
 # generate the index page with all the branches and tags
-. scripts/travis/make_doc_index.sh gh-page-files > "gh-page-files/index.html"
-touch gh-page-files/.nojekyll
+. scripts/docs/make_doc_index.sh docs > "docs/index.html"
+touch docs/.nojekyll
