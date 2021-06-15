@@ -12,13 +12,13 @@ else
 fi
 
 # remove existing folder if present
-if [ -d "gh-page-files/$TRAVIS_BRANCH" ]; then
-    rm -rf "gh-page-files/$TRAVIS_BRANCH"
+if [ -d "gh-page-files/$REF_NAME" ]; then
+    rm -rf "gh-page-files/$REF_NAME"
 fi
 
 # move generated docs into deployment folder
-mv docs "gh-page-files/$TRAVIS_BRANCH"
+mv docs "gh-page-files/$REF_NAME"
 
 # generate the index page with all the branches and tags
-. scripts/travis/make_doc_index.sh gh-page-files > "gh-page-files/index.html"
+. scripts/docs/make_doc_index.sh gh-page-files > "gh-page-files/index.html"
 touch gh-page-files/.nojekyll
