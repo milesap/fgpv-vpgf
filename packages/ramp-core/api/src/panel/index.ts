@@ -468,7 +468,9 @@ export class Panel {
 }
 
 export interface Panel {
+    /** @ignore */
     _api: ViewerAPI;
+    /** @ignore */
     _style: {
         [index: string]: string | undefined;
         top?: string;
@@ -478,17 +480,27 @@ export interface Panel {
         width?: string;
         height?: string;
     };
+    /** @ignore */
     _reopenAfterOverlay: boolean;
+    /** @ignore */
     _isDialog: boolean;
+    /** @ignore */
     _isCloseable: boolean;
 
     //HTML parent Components
+    /** @ignore */
     _element: JQuery<HTMLElement>;
+    /** @ignore */
     _body: JQuery<HTMLElement>;
+    /** @ignore */
     _header: Header;
+    /** @ignore */
     _underlay: boolean;
+    /** @ignore */
     _offscreen: boolean;
+    /** @ignore */
     _observer: MutationObserver;
+    /** @ignore */
     _openPanelSubscriber: Subscription;
 
     //subjects initialized for observables that are fired through method calls
